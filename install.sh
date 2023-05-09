@@ -17,7 +17,7 @@ function main() {
 
     # Execute installation script if any and exit
     for s in install setup bootstrap; do {
-        if p="${dotfiles_dir}/${s}" && test -x "${p}" || p="${p}.sh" && test -x "${p}"; then {
+        if p="${dotfiles_dir}/${s}" && test -x "${p}" || p="${p}.sh" && test -x "${p}" || p="${dotfiles_dir}/script/${s}" && test -x "${p}"; then {
             set +m; "$p"; set -m;
             exit;
         } fi
